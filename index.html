@@ -708,6 +708,47 @@ body.dark{
   background-attachment:fixed!important;
 }
 
+
+/* Animated falling meteors / shooting stars — dark mode only */
+body.dark{position:relative;isolation:isolate;overflow-x:hidden}
+body.dark>*{position:relative;z-index:1}
+body.dark::before,body.dark::after{
+  content:"";position:fixed;inset:-35vh -35vw;pointer-events:none;
+  z-index:0;opacity:0;will-change:transform,opacity;
+  background-repeat:no-repeat;
+}
+body.dark::before{
+  opacity:.78;
+  background-image:
+    linear-gradient(118deg,transparent 0 47%,rgba(255,255,255,.95) 49%,rgba(190,210,255,.55) 50%,transparent 53%),
+    linear-gradient(118deg,transparent 0 47%,rgba(255,255,255,.8) 49%,transparent 52%),
+    linear-gradient(118deg,transparent 0 47%,rgba(220,232,255,.9) 49%,transparent 52%),
+    linear-gradient(118deg,transparent 0 47%,rgba(255,255,255,.7) 49%,transparent 52%);
+  background-size:170px 2px,125px 1px,210px 2px,145px 1px;
+  background-position:12% 18%,54% 8%,76% 43%,30% 72%;
+  animation:meteorDrift 17s linear infinite;
+}
+body.dark::after{
+  opacity:.58;
+  background-image:
+    linear-gradient(118deg,transparent 0 47%,rgba(255,255,255,.9) 49%,transparent 52%),
+    linear-gradient(118deg,transparent 0 47%,rgba(190,210,255,.8) 49%,transparent 52%),
+    linear-gradient(118deg,transparent 0 47%,rgba(255,255,255,.75) 49%,transparent 52%);
+  background-size:115px 1px,190px 2px,140px 1px;
+  background-position:38% 27%,88% 61%,8% 83%;
+  animation:meteorDrift 25s linear infinite;
+  animation-delay:-11s;
+}
+@keyframes meteorDrift{
+  0%{transform:translate3d(-12vw,-16vh,0);opacity:0}
+  8%{opacity:.8}
+  65%{opacity:.7}
+  100%{transform:translate3d(24vw,34vh,0);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  body.dark::before,body.dark::after{animation:none!important;opacity:.25}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-glyph" aria-hidden="true">☀️</span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
