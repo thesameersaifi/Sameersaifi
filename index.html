@@ -532,6 +532,40 @@ body.dark .nav.wrap .navlinks .nav-cta .cta-icon{background:#fff!important;color
  .nav.wrap .menu:after{content:"☰"!important;font-size:21px!important;line-height:1!important}
 }
 
+
+/* Minimal compact day/night button: only sun in day, moon at night */
+.nav.wrap button.theme-toggle,
+.nav.wrap button.theme-toggle:hover,
+.nav.wrap button.theme-toggle:focus,
+.nav.wrap button.theme-toggle:active{
+  appearance:none!important;-webkit-appearance:none!important;
+  display:grid!important;place-items:center!important;
+  width:38px!important;min-width:38px!important;max-width:38px!important;
+  height:38px!important;min-height:38px!important;max-height:38px!important;
+  flex:0 0 38px!important;padding:0!important;margin:0!important;
+  border:1px solid rgba(25,23,26,.10)!important;border-radius:12px!important;
+  background:#fff!important;color:#171518!important;
+  box-shadow:0 2px 8px rgba(20,18,24,.07)!important;
+  transform:none!important;rotate:0deg!important;cursor:pointer!important;
+}
+.nav.wrap .theme-track{position:static!important;display:grid!important;place-items:center!important;
+  width:100%!important;height:100%!important;background:transparent!important;border-radius:inherit!important}
+.nav.wrap .theme-knob{position:static!important;display:grid!important;place-items:center!important;
+  width:100%!important;height:100%!important;border-radius:inherit!important;
+  background:transparent!important;color:#171518!important;box-shadow:none!important;transform:none!important}
+.nav.wrap .knob-symbol{font-family:Arial,sans-serif!important;font-size:19px!important;line-height:1!important}
+body.dark .nav.wrap button.theme-toggle{background:#171518!important;color:#fff!important;border-color:rgba(255,255,255,.15)!important;box-shadow:0 2px 8px rgba(0,0,0,.2)!important}
+body.dark .nav.wrap .theme-knob{color:#fff!important}
+body.dark .nav.wrap .knob-symbol{transform:none!important}
+@media(max-width:760px){
+ .nav.wrap button.theme-toggle,.nav.wrap button.theme-toggle:hover{
+   width:34px!important;min-width:34px!important;max-width:34px!important;
+   height:34px!important;min-height:34px!important;max-height:34px!important;flex-basis:34px!important;
+   border-radius:10px!important;
+ }
+ .nav.wrap .knob-symbol{font-size:18px!important}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
