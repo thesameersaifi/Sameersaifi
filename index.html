@@ -220,8 +220,53 @@ body.dark .nav.wrap button.theme-toggle .switch-knob{transform:translateX(49px)!
  .nav.wrap .nav-avatar{width:36px!important;height:36px!important;min-width:36px!important;max-width:36px!important;min-height:36px!important;max-height:36px!important;flex-basis:36px!important}
 }
 
+
+/* Compact circular day/night control + integrated contact/avatar button */
+.nav-right{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:12px!important}
+.nav.wrap .theme-toggle,.nav.wrap .theme-toggle:hover,.nav.wrap .theme-toggle:focus,.nav.wrap .theme-toggle:active{
+  width:58px!important;height:58px!important;min-width:58px!important;max-width:58px!important;
+  min-height:58px!important;max-height:58px!important;flex:0 0 58px!important;
+  display:block!important;position:relative!important;padding:0!important;margin:0!important;
+  overflow:hidden!important;border-radius:50%!important;border:3px solid #fff!important;
+  background:#f1efff!important;box-shadow:0 5px 20px rgba(88,75,180,.22),0 0 0 1px rgba(103,88,220,.18)!important;
+  transform:none!important;rotate:0deg!important;skew:0deg!important;cursor:pointer!important;
+}
+.circle-scene{position:absolute;inset:0;display:block;overflow:hidden;border-radius:50%;background:#f8d85b;transition:background .55s ease}
+.circle-scene:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#ffe98b,#f6c94e);transition:opacity .45s}
+.scene-moon{position:absolute;z-index:2;right:13px;top:13px;width:13px;height:13px;border-radius:50%;background:#fff;opacity:0;transition:opacity .35s}
+.scene-moon:after{content:"";position:absolute;left:5px;top:-3px;width:13px;height:13px;border-radius:50%;background:#6555e8}
+.scene-sun{position:absolute;z-index:2;left:13px;top:13px;width:12px;height:12px;border-radius:50%;background:#fff9d9;box-shadow:0 0 12px 5px rgba(255,255,220,.7);transition:opacity .35s}
+.scene-hill{position:absolute;left:-7%;width:114%;height:37%;bottom:0;display:block;clip-path:polygon(0 48%,19% 20%,37% 46%,53% 10%,73% 45%,88% 24%,100% 48%,100% 100%,0 100%)}
+.hill-back{background:#d4cafa;bottom:8%;transition:background .5s}
+.hill-front{background:#fff;clip-path:polygon(0 30%,20% 50%,38% 24%,57% 48%,78% 22%,100% 36%,100% 100%,0 100%);transition:background .5s}
+body.dark .nav.wrap .theme-toggle{background:#6555e8!important;box-shadow:0 5px 22px rgba(100,83,235,.35),0 0 0 1px rgba(124,110,255,.35)!important}
+body.dark .circle-scene,body.dark .circle-scene:before{background:#6555e8}
+body.dark .circle-scene:before{background:linear-gradient(180deg,#6555e8,#5746d8)}
+body.dark .scene-moon{opacity:1}
+body.dark .scene-sun{opacity:0}
+body.dark .scene-moon:after{background:#6555e8}
+body.dark .hill-back{background:#d9d3fa}
+body.dark .hill-front{background:#f6f5ff}
+.nav.wrap .nav-cta{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:13px!important;
+  min-height:54px!important;padding:6px 7px 6px 22px!important;border-radius:16px!important;
+  background:#171518!important;color:#fff!important;border:1px solid #171518!important;
+  font-size:12px!important;font-weight:600!important;white-space:nowrap!important;
+  box-shadow:0 5px 16px rgba(20,18,22,.12);transition:transform .2s,box-shadow .2s;
+}
+.nav.wrap .nav-cta:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(20,18,22,.18)}
+.cta-avatar{width:40px!important;height:40px!important;flex:0 0 40px!important;display:grid!important;place-items:center!important;border-radius:50%!important;background:linear-gradient(145deg,#f3d7d1,#d99b93 60%,#b87975)!important;color:#fff!important;border:2px solid rgba(255,255,255,.85)!important;font-size:11px!important;font-weight:700!important;letter-spacing:-.04em}
+body.dark .nav.wrap .nav-cta{background:#171518!important;color:#fff!important;border-color:#171518!important}
+body.dark .cta-avatar{border-color:#555!important}
+@media(max-width:760px){
+ .nav-right{gap:9px!important}
+ .nav.wrap .theme-toggle,.nav.wrap .theme-toggle:hover{width:48px!important;height:48px!important;min-width:48px!important;max-width:48px!important;min-height:48px!important;max-height:48px!important;flex-basis:48px!important}
+ .nav.wrap .nav-cta{min-height:46px!important;padding:5px 6px 5px 14px!important;gap:8px!important;border-radius:14px!important;font-size:10px!important}
+ .cta-avatar{width:34px!important;height:34px!important;flex-basis:34px!important}
+}
+
 </style></head><body>
-<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><a class="nav-cta" href="#contact">Connect · Contact ↗</a><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark mode"><span class="switch-sky" aria-hidden="true"><i class="switch-sun"></i><i class="switch-moon"></i><i class="switch-stars"></i><i class="switch-mountains"></i></span><span class="switch-knob"></span></button><div class="nav-avatar" aria-label="Sameer Saifi profile">SS</div></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
+<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="circle-scene" aria-hidden="true"><i class="scene-moon"></i><i class="scene-sun"></i><i class="scene-hill hill-back"></i><i class="scene-hill hill-front"></i></span></button><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-avatar" aria-hidden="true">SS</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
 <script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('sameer-theme');if(savedTheme==='dark')document.body.classList.add('dark');function syncTheme(){const dark=document.body.classList.contains('dark');themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('aria-pressed',String(dark));document.querySelector('meta[name="theme-color"]').content=dark?'#171518':'#f8f5f4'}syncTheme();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('sameer-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()});const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
 </body></html>
