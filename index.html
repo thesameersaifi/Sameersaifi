@@ -176,6 +176,22 @@ body.dark .nav.wrap .nav-avatar{border-color:#eee!important}
 body.dark .nav.wrap .menu{color:#171518!important;border-color:#dedede!important}
 @media(max-width:760px){body.dark .navlinks.open{background:#fff!important;border-color:#e8e3e3!important}body.dark .nav.wrap .navlinks a{color:#171518!important}}
 
+
+/* Final header control sizing and straight day/night switch */
+.nav.wrap .theme-toggle{width:92px!important;min-width:92px!important;height:43px!important;transform:none!important;rotate:0deg!important;skew:0deg!important;align-self:center;flex:0 0 92px;position:relative;overflow:hidden}
+.nav.wrap .theme-toggle:hover{transform:none!important}
+.nav.wrap .theme-toggle .switch-sky{position:absolute;inset:0;border-radius:inherit;transform:none!important}
+.nav.wrap .theme-toggle .switch-knob{position:absolute;top:4px;left:4px;transform:none;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+body.dark .nav.wrap .theme-toggle .switch-knob{transform:translateX(49px)!important}
+.nav.wrap .nav-avatar{width:42px!important;height:42px!important;min-width:42px!important;flex:0 0 42px;border-radius:50%;font-size:12px!important;line-height:1!important;transform:none!important}
+.nav.wrap .nav-right{display:flex;align-items:center;gap:14px}
+@media(max-width:760px){
+ .nav.wrap .theme-toggle{width:82px!important;min-width:82px!important;height:39px!important;flex-basis:82px}
+ .nav.wrap .theme-toggle .switch-knob{width:31px;height:31px}
+ body.dark .nav.wrap .theme-toggle .switch-knob{transform:translateX(43px)!important}
+ .nav.wrap .nav-avatar{width:36px!important;height:36px!important;min-width:36px!important;flex-basis:36px}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><a class="nav-cta" href="#contact">Connect · Contact ↗</a><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark mode"><span class="switch-sky" aria-hidden="true"><i class="switch-sun"></i><i class="switch-moon"></i><i class="switch-stars"></i><i class="switch-mountains"></i></span><span class="switch-knob"></span></button><div class="nav-avatar" aria-label="Sameer Saifi profile">SS</div></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
