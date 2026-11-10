@@ -387,8 +387,50 @@ body.dark .cta-icon{background:#171518!important;color:#fff!important}
   .nav.wrap .menu{width:31px!important;height:31px!important;min-width:31px!important;flex-basis:31px!important}
 }
 
-</style></head><body>
-<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-symbol">☾</span><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
-<script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('sameer-theme');if(savedTheme==='dark')document.body.classList.add('dark');function syncTheme(){const dark=document.body.classList.contains('dark');themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('aria-pressed',String(dark));document.querySelector('meta[name="theme-color"]').content=dark?'#171518':'#f8f5f4'}syncTheme();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('sameer-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()});const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
+/* Refined theme control and white mobile navigation card */
+.nav.wrap .navlinks .nav-cta{margin-left:8px}
+.nav.wrap .navlinks .nav-cta:hover{transform:translateY(-1px)!important}
+.nav.wrap .theme-track{background:#e9e8e5!important}
+.nav.wrap .theme-knob{left:3px!important;top:3px!important;width:30px!important;height:30px!important;transform:translateX(0)!important;background:#171518!important;color:#fff!important}
+.nav.wrap .knob-symbol{font-size:15px!important}
+body.dark .nav.wrap .theme-track{background:#e9e8e5!important}
+body.dark .nav.wrap .theme-knob{transform:translateX(27px)!important;background:#171518!important;color:#fff!important}
+body.dark .nav.wrap .knob-symbol{font-size:14px!important}
+@media(max-width:760px){
+ .nav.wrap .nav-left{flex:0 0 auto!important}
+ .nav.wrap .navlinks,.nav.wrap .navlinks.open{
+   display:none;position:absolute!important;top:calc(100% + 10px)!important;
+   left:14px!important;right:14px!important;width:auto!important;
+   padding:22px!important;gap:0!important;flex-direction:column!important;align-items:stretch!important;
+   background:#fff!important;color:#19171a!important;border:1px solid rgba(25,23,26,.07)!important;
+   border-radius:22px!important;box-shadow:0 18px 48px rgba(20,18,24,.16)!important;
+   z-index:50!important;max-height:calc(100vh - 110px)!important;overflow-y:auto!important;
+ }
+ .nav.wrap .navlinks.open{display:flex!important}
+ .nav.wrap .navlinks a:not(.nav-cta){display:block!important;padding:14px 4px!important;color:#252229!important;font-size:15px!important;font-weight:500!important;border-bottom:1px solid #f0eef0!important}
+ .nav.wrap .navlinks .nav-cta{
+   display:flex!important;align-self:stretch!important;justify-content:space-between!important;
+   width:100%!important;max-width:none!important;min-width:0!important;height:52px!important;min-height:52px!important;
+   margin:18px 0 0!important;padding:6px 7px 6px 18px!important;gap:12px!important;
+   background:#f7f6f4!important;color:#171518!important;border:1px solid #eeebea!important;
+   border-radius:15px!important;font-size:13px!important;box-shadow:none!important;
+ }
+ .nav.wrap .navlinks .cta-icon{width:38px!important;height:38px!important;min-width:38px!important;flex:0 0 38px!important;background:#171518!important;color:#fff!important}
+ .nav.wrap .nav-right{margin-left:auto!important;flex:0 0 auto!important}
+ .nav.wrap button.theme-toggle{width:54px!important;min-width:54px!important;max-width:54px!important;height:40px!important;min-height:40px!important;max-height:40px!important;flex-basis:54px!important;padding:3px!important}
+ .nav.wrap .theme-knob{width:32px!important;height:32px!important;left:3px!important;top:3px!important}
+ body.dark .nav.wrap .theme-knob{transform:translateX(14px)!important}
+ .nav.wrap .menu{margin-left:8px!important}
+}
+@media(max-width:390px){
+ .nav.wrap .navlinks,.nav.wrap .navlinks.open{left:10px!important;right:10px!important;padding:18px!important}
+ .nav.wrap button.theme-toggle{width:50px!important;min-width:50px!important;max-width:50px!important;flex-basis:50px!important}
+ body.dark .nav.wrap .theme-knob{transform:translateX(10px)!important}
+}
+
+</style></head><body>
+<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
+
+<script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('sameer-theme');if(savedTheme==='dark')document.body.classList.add('dark');function syncTheme(){const dark=document.body.classList.contains('dark');themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('aria-pressed',String(dark));const knobIcon=themeToggle.querySelector('.knob-symbol');if(knobIcon)knobIcon.textContent=dark?'☾':'☀';document.querySelector('meta[name="theme-color"]').content=dark?'#171518':'#f8f5f4'}syncTheme();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('sameer-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()});const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
 </body></html>
