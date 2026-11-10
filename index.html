@@ -597,6 +597,24 @@ body.dark .nav.wrap button#themeToggle{
  .nav.wrap button#themeToggle .theme-glyph{font-size:18px!important}
 }
 
+
+/* Slightly smaller sun/moon control */
+.nav.wrap button#themeToggle,
+.nav.wrap button#themeToggle:hover,
+.nav.wrap button#themeToggle:focus,
+.nav.wrap button#themeToggle:active{
+  width:30px!important;height:30px!important;min-width:30px!important;min-height:30px!important;
+  max-width:30px!important;max-height:30px!important;flex:0 0 30px!important;
+}
+.nav.wrap button#themeToggle .theme-glyph{font-size:16px!important}
+@media(max-width:760px){
+ .nav.wrap button#themeToggle,.nav.wrap button#themeToggle:hover{
+  width:28px!important;height:28px!important;min-width:28px!important;min-height:28px!important;
+  max-width:28px!important;max-height:28px!important;flex-basis:28px!important;
+ }
+ .nav.wrap button#themeToggle .theme-glyph{font-size:15px!important}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-glyph" aria-hidden="true">☀️</span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
