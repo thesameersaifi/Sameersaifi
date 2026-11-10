@@ -4,6 +4,24 @@
 @media(max-width:950px){.hero{min-height:630px;padding:70px 6%}.hero-content{max-width:520px}.hero-visual{width:49%;opacity:.78}.hero h1{font-size:clamp(50px,7vw,69px)}}
 @media(max-width:650px){.wrap{width:calc(100% - 28px)}.nav{height:66px}.menu{display:block}.navlinks{display:none;position:absolute;top:61px;left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;flex-direction:column;align-items:flex-start;gap:18px;box-shadow:0 20px 35px rgba(30,20,24,.09)}.navlinks.open{display:flex}.hero{min-height:760px;align-items:flex-start;padding:62px 26px;border-radius:18px}.hero-content{max-width:100%}.hero h1{font-size:clamp(44px,10.5vw,62px)}.hero-desc{font-size:12px;max-width:390px}.hero-visual{height:46%;width:85%;bottom:0;right:0;opacity:.68}.portrait-caption{font-size:8px;bottom:10px;right:15px}.availability{margin-bottom:21px}.actions{margin-top:24px}.btn{padding:12px 15px;font-size:11px}.scroll-cue{padding-bottom:35px}.section{padding:50px 0 65px}.section-head{align-items:flex-start;flex-direction:column}.section h2{font-size:36px}.about,.work-grid,.timeline,.skills-grid,.edu-grid{grid-template-columns:1fr}.about-card{padding:23px}.work-art{height:170px}.work-info p{min-height:0}.contact{padding:29px;flex-direction:column;align-items:flex-start}.footer{flex-direction:column;gap:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* FULL-BLEED EDITORIAL LAYOUT */
+.wrap{width:min(1440px,calc(100% - 112px))}
+.nav{width:100%;padding-left:max(56px,calc((100% - 1440px)/2));padding-right:max(56px,calc((100% - 1440px)/2))}
+.hero{width:100%;max-width:none;min-height:min(790px,calc(100vh - 82px));border:0;border-radius:0;padding-left:max(7.8vw,calc((100% - 1440px)/2));padding-right:max(7.8vw,calc((100% - 1440px)/2));background:radial-gradient(ellipse at 82% 67%,rgba(247,190,178,.72),transparent 39%),radial-gradient(ellipse at 54% 100%,rgba(249,215,209,.8),transparent 43%),linear-gradient(110deg,#fffdfc,#f9f4f4)}
+.hero-content{max-width:670px}.hero h1{font-size:clamp(58px,7vw,104px)}
+.section{width:100%;max-width:none;padding:105px max(7.8vw,calc((100% - 1440px)/2));border-top:1px solid #eee7e6}
+.section-head{margin-bottom:48px}.section-head p{max-width:480px}
+.about{grid-template-columns:1.15fr .85fr;gap:8vw}
+.about-card{border:0;border-radius:0;background:transparent;padding:8px 0;min-height:0}
+.about-card:first-child{font-size:clamp(17px,1.5vw,22px);max-width:720px}
+.about-card p{font-size:inherit;line-height:2.05}
+.details{gap:0 30px}.detail{border-radius:0;background:transparent;border-bottom:1px solid var(--line);padding:18px 0}
+.work-grid{gap:0 38px}.work-card{display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;align-items:center;gap:30px;padding:28px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
+.work-card:hover{transform:none;box-shadow:none}.work-art{height:230px;border-radius:4px}.work-info{padding:0}.work-info p{min-height:0;max-width:520px}
+.timeline{gap:0 60px}.experience{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:28px 0}.skills-grid{gap:0 42px}.skill{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:28px 0}.edu-grid{gap:0 50px}.edu{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:28px 0}
+.contact{border-radius:0;border:0;border-top:1px solid #e9dedd;border-bottom:1px solid #e9dedd;padding:70px 0;background:radial-gradient(circle at 90% 50%,#f4d8d2,transparent 35%),linear-gradient(120deg,#fff,#f8eeee)}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}.nav{width:100%;padding-left:18px;padding-right:18px}.hero{width:100%;padding:58px 22px 30px;min-height:760px}.section{padding:68px 18px}.about{gap:22px}.work-card{grid-template-columns:1fr;gap:18px;padding:22px 0}.work-art{height:175px}.contact{padding:34px 0}.section-head{margin-bottom:28px}}
 </style></head><body>
 <header class="nav wrap"><a href="#home" class="brand">sameer<span>.</span></a><button class="menu" id="menu" aria-expanded="false">Menu ☰</button><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#projects">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a class="nav-cta" href="#contact">Contact ↗</a></nav></header>
 <main>
