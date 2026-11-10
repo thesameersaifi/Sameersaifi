@@ -519,6 +519,19 @@ body.dark .nav.wrap .navlinks .nav-cta .cta-icon{background:#fff!important;color
  }
 }
 
+
+/* Hamburger icon: three lines without a surrounding circle */
+@media(max-width:760px){
+ .nav.wrap .menu{
+   border:0!important;
+   border-radius:0!important;
+   background:transparent!important;
+   box-shadow:none!important;
+   width:34px!important;height:34px!important;min-width:34px!important;
+ }
+ .nav.wrap .menu:after{content:"☰"!important;font-size:21px!important;line-height:1!important}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
