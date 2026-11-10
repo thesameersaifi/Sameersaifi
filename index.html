@@ -566,8 +566,39 @@ body.dark .nav.wrap .knob-symbol{transform:none!important}
  .nav.wrap .knob-symbol{font-size:18px!important}
 }
 
-</style></head><body>
-<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
-<script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('sameer-theme');if(savedTheme==='dark')document.body.classList.add('dark');function syncTheme(){const dark=document.body.classList.contains('dark');themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('aria-pressed',String(dark));const knobIcon=themeToggle.querySelector('.knob-symbol');if(knobIcon)knobIcon.textContent=dark?'☾':'☀';document.querySelector('meta[name="theme-color"]').content=dark?'#171518':'#f8f5f4'}syncTheme();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('sameer-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()});const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
+/* Replace all legacy toggle layers with one simple icon button */
+.nav.wrap button#themeToggle,
+.nav.wrap button#themeToggle:hover,
+.nav.wrap button#themeToggle:focus,
+.nav.wrap button#themeToggle:active{
+  all:unset!important;box-sizing:border-box!important;
+  width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important;
+  max-width:36px!important;max-height:36px!important;flex:0 0 36px!important;
+  display:grid!important;place-items:center!important;
+  border-radius:50%!important;background:#fff!important;color:#171518!important;
+  border:1px solid #e8e5e5!important;box-shadow:0 2px 8px rgba(0,0,0,.08)!important;
+  cursor:pointer!important;transform:none!important;rotate:0deg!important;
+}
+.nav.wrap button#themeToggle .theme-glyph{
+  display:block!important;position:static!important;
+  width:auto!important;height:auto!important;line-height:1!important;
+  font-family:Arial,sans-serif!important;font-size:19px!important;
+  opacity:1!important;transform:none!important;filter:none!important;
+}
+body.dark .nav.wrap button#themeToggle{
+  background:#171518!important;color:#fff!important;border-color:#38343b!important;
+}
+@media(max-width:760px){
+ .nav.wrap button#themeToggle,.nav.wrap button#themeToggle:hover{
+  width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;
+  max-width:34px!important;max-height:34px!important;flex-basis:34px!important;border-radius:50%!important;
+ }
+ .nav.wrap button#themeToggle .theme-glyph{font-size:18px!important}
+}
+
+</style></head><body>
+<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-glyph" aria-hidden="true">☀️</span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
+
+<script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('sameer-theme');if(savedTheme==='dark')document.body.classList.add('dark');function syncTheme(){const dark=document.body.classList.contains('dark');themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('aria-pressed',String(dark));const themeGlyph=themeToggle.querySelector('.theme-glyph');if(themeGlyph)themeGlyph.textContent=dark?'🌙':'☀️';document.querySelector('meta[name="theme-color"]').content=dark?'#171518':'#f8f5f4'}syncTheme();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('sameer-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()});const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
 </body></html>
