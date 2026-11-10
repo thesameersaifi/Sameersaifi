@@ -192,6 +192,34 @@ body.dark .nav.wrap .theme-toggle .switch-knob{transform:translateX(49px)!import
  .nav.wrap .nav-avatar{width:36px!important;height:36px!important;min-width:36px!important;flex-basis:36px}
 }
 
+
+/* Hard reset: keep the illustrated theme switch perfectly horizontal */
+.nav-right{align-items:center!important}
+.nav.wrap button.theme-toggle,
+.nav.wrap button.theme-toggle:hover,
+.nav.wrap button.theme-toggle:focus,
+.nav.wrap button.theme-toggle:active{
+  appearance:none!important;-webkit-appearance:none!important;
+  display:block!important;box-sizing:border-box!important;
+  width:92px!important;min-width:92px!important;max-width:92px!important;
+  height:43px!important;min-height:43px!important;max-height:43px!important;
+  padding:0!important;margin:0!important;
+  border:0!important;border-radius:999px!important;
+  transform:translate(0,0) rotate(0deg) skew(0deg,0deg)!important;
+  rotate:0deg!important;scale:1!important;transform-origin:50% 50%!important;
+  align-self:center!important;flex:0 0 92px!important;
+}
+.nav.wrap button.theme-toggle .switch-sky{inset:0!important;border-radius:999px!important;transform:none!important}
+.nav.wrap button.theme-toggle .switch-knob{width:35px!important;height:35px!important;left:4px!important;top:4px!important;transform:translateX(0)!important}
+body.dark .nav.wrap button.theme-toggle .switch-knob{transform:translateX(49px)!important}
+.nav.wrap .nav-avatar{display:grid!important;place-items:center!important;width:42px!important;height:42px!important;min-width:42px!important;max-width:42px!important;min-height:42px!important;max-height:42px!important;flex:0 0 42px!important;padding:0!important;border-radius:50%!important;line-height:1!important}
+@media(max-width:760px){
+ .nav.wrap button.theme-toggle,.nav.wrap button.theme-toggle:hover,.nav.wrap button.theme-toggle:focus,.nav.wrap button.theme-toggle:active{width:82px!important;min-width:82px!important;max-width:82px!important;height:39px!important;min-height:39px!important;max-height:39px!important;flex-basis:82px!important}
+ .nav.wrap button.theme-toggle .switch-knob{width:31px!important;height:31px!important}
+ body.dark .nav.wrap button.theme-toggle .switch-knob{transform:translateX(43px)!important}
+ .nav.wrap .nav-avatar{width:36px!important;height:36px!important;min-width:36px!important;max-width:36px!important;min-height:36px!important;max-height:36px!important;flex-basis:36px!important}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><a class="nav-cta" href="#contact">Connect · Contact ↗</a><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark mode"><span class="switch-sky" aria-hidden="true"><i class="switch-sun"></i><i class="switch-moon"></i><i class="switch-stars"></i><i class="switch-mountains"></i></span><span class="switch-knob"></span></button><div class="nav-avatar" aria-label="Sameer Saifi profile">SS</div></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
