@@ -265,6 +265,43 @@ body.dark .cta-avatar{border-color:#555!important}
  .cta-avatar{width:34px!important;height:34px!important;flex-basis:34px!important}
 }
 
+
+/* Circular illustrated day/night scene — reference-matched */
+.nav.wrap button.theme-toggle,
+.nav.wrap button.theme-toggle:hover,
+.nav.wrap button.theme-toggle:focus,
+.nav.wrap button.theme-toggle:active{
+  width:58px!important;height:58px!important;min-width:58px!important;max-width:58px!important;
+  min-height:58px!important;max-height:58px!important;flex:0 0 58px!important;
+  padding:0!important;margin:0!important;display:block!important;position:relative!important;
+  overflow:hidden!important;border:3px solid #fff!important;border-radius:50%!important;
+  background:#f1efff!important;box-shadow:0 7px 22px rgba(99,82,225,.25),0 0 0 1px rgba(111,94,235,.18)!important;
+  transform:none!important;rotate:0deg!important;cursor:pointer!important;
+}
+.nav.wrap .circle-scene{position:absolute!important;inset:0!important;display:block!important;overflow:hidden!important;border-radius:50%!important;background:#f8d85d!important;transition:background .55s ease!important}
+.nav.wrap .circle-scene:before{content:"";position:absolute;inset:0 0 39% 0;background:linear-gradient(180deg,#ffe98d,#f5ca50);transition:background .55s ease}
+.nav.wrap .scene-moon{position:absolute;z-index:4;right:12px;top:12px;width:13px;height:13px;border-radius:50%;background:#fff;opacity:0;transition:opacity .35s}
+.nav.wrap .scene-moon:after{content:"";position:absolute;left:5px;top:-3px;width:13px;height:13px;border-radius:50%;background:#6252e7}
+.nav.wrap .scene-sun{position:absolute;z-index:4;left:12px;top:12px;width:13px;height:13px;border-radius:50%;background:#fff9d9;box-shadow:0 0 13px 5px rgba(255,255,220,.75);transition:opacity .35s}
+.nav.wrap .scene-hill{position:absolute;left:-8%;width:116%;display:block}
+.nav.wrap .hill-back{z-index:2;height:49%;bottom:19%;background:#e5b94c;clip-path:polygon(0 60%,17% 34%,34% 55%,52% 12%,69% 52%,85% 30%,100% 53%,100% 100%,0 100%);transition:background .55s}
+.nav.wrap .hill-front{z-index:3;height:38%;bottom:0;background:#fff9e8;clip-path:polygon(0 35%,18% 52%,37% 27%,57% 50%,77% 22%,100% 36%,100% 100%,0 100%);transition:background .55s}
+.nav.wrap .circle-scene:after{content:"";position:absolute;z-index:1;left:-12%;bottom:22%;width:125%;height:23%;background:rgba(255,255,255,.25);border-radius:50% 50% 0 0 / 70% 70% 0 0;transform:rotate(-4deg)}
+body.dark .nav.wrap .theme-toggle{background:#6555e8!important;box-shadow:0 7px 23px rgba(100,83,235,.35),0 0 0 1px rgba(124,110,255,.35)!important}
+body.dark .nav.wrap .circle-scene{background:#6555e8!important}
+body.dark .nav.wrap .circle-scene:before{background:linear-gradient(180deg,#6555e8,#5b4be0)}
+body.dark .nav.wrap .scene-moon{opacity:1}
+body.dark .nav.wrap .scene-sun{opacity:0}
+body.dark .nav.wrap .scene-moon:after{background:#6555e8}
+body.dark .nav.wrap .hill-back{background:#d9d3fa}
+body.dark .nav.wrap .hill-front{background:#f7f6ff}
+body.dark .nav.wrap .circle-scene:after{background:rgba(255,255,255,.78)}
+@media(max-width:760px){
+ .nav.wrap button.theme-toggle,.nav.wrap button.theme-toggle:hover{width:50px!important;height:50px!important;min-width:50px!important;max-width:50px!important;min-height:50px!important;max-height:50px!important;flex-basis:50px!important}
+ .nav.wrap .scene-moon{right:10px;top:10px}
+ .nav.wrap .scene-sun{left:10px;top:10px}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="circle-scene" aria-hidden="true"><i class="scene-moon"></i><i class="scene-sun"></i><i class="scene-hill hill-back"></i><i class="scene-hill hill-front"></i></span></button><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-avatar" aria-hidden="true">SS</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
