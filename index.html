@@ -488,6 +488,37 @@ body.dark .nav.wrap .navlinks .nav-cta .cta-icon{background:#fff!important;color
  .nav.wrap .menu{z-index:101!important}
 }
 
+
+/* Sidebar color rules: outer panel always white; Connect card always black */
+@media(max-width:760px){
+ .nav.wrap .navlinks,
+ .nav.wrap .navlinks.open,
+ body.dark .nav.wrap .navlinks,
+ body.dark .nav.wrap .navlinks.open{
+   background:#fff!important;
+   color:#171518!important;
+   border-color:rgba(25,23,26,.08)!important;
+   box-shadow:0 18px 48px rgba(20,18,24,.16)!important;
+ }
+ .nav.wrap .navlinks a:not(.nav-cta),
+ body.dark .nav.wrap .navlinks a:not(.nav-cta){
+   color:#252229!important;
+   border-color:#f0eef0!important;
+ }
+ .nav.wrap .navlinks .nav-cta,
+ body.dark .nav.wrap .navlinks .nav-cta{
+   background:#171518!important;
+   color:#fff!important;
+   border:1px solid #171518!important;
+   box-shadow:0 5px 16px rgba(20,18,24,.14)!important;
+ }
+ .nav.wrap .navlinks .nav-cta .cta-icon,
+ body.dark .nav.wrap .navlinks .nav-cta .cta-icon{
+   background:#fff!important;
+   color:#171518!important;
+ }
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
