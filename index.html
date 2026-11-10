@@ -341,6 +341,52 @@ body.dark .cta-icon{background:#171518!important;color:#fff!important}
  .cta-icon{width:33px!important;height:33px!important;flex-basis:33px!important}
 }
 
+
+/* Mobile header: prevent logo and action controls from overlapping */
+@media(max-width:760px){
+  .nav.wrap{
+    width:100%!important;height:72px!important;min-height:72px!important;
+    padding:0 14px!important;gap:8px!important;justify-content:space-between!important;
+    overflow:visible!important;
+  }
+  .nav.wrap .nav-left{flex:1 1 auto!important;min-width:0!important;gap:0!important}
+  .nav.wrap .brand{display:block!important;flex:0 0 auto!important;font-size:27px!important;letter-spacing:-.09em!important;line-height:1!important;white-space:nowrap!important}
+  .nav.wrap .nav-right{
+    flex:0 0 auto!important;min-width:0!important;margin-left:auto!important;
+    display:flex!important;align-items:center!important;gap:7px!important;
+  }
+  .nav.wrap button.theme-toggle{
+    width:42px!important;min-width:42px!important;max-width:42px!important;
+    height:36px!important;min-height:36px!important;max-height:36px!important;flex:0 0 42px!important;
+    padding:3px!important;
+  }
+  .nav.wrap .theme-knob{width:28px!important;height:28px!important}
+  body.dark .nav.wrap .theme-knob{transform:translateX(7px)!important}
+  .nav.wrap .nav-cta{
+    min-width:0!important;width:auto!important;max-width:132px!important;
+    height:40px!important;min-height:40px!important;padding:4px 5px 4px 11px!important;
+    gap:6px!important;border-radius:999px!important;font-size:10px!important;
+  }
+  .nav.wrap .nav-cta>span:first-child{white-space:nowrap!important}
+  .nav.wrap .cta-icon{width:30px!important;height:30px!important;min-width:30px!important;flex:0 0 30px!important;font-size:15px!important}
+  .nav.wrap .menu{
+    display:grid!important;place-items:center!important;flex:0 0 34px!important;
+    width:34px!important;height:34px!important;min-width:34px!important;margin:0 0 0 2px!important;
+    padding:0!important;border:1px solid rgba(255,255,255,.28)!important;
+    border-radius:50%!important;background:transparent!important;color:#fff!important;
+  }
+  .nav.wrap .menu:after{font-size:14px!important}
+  .nav.wrap .navlinks{top:72px!important;left:12px!important;right:12px!important}
+}
+@media(max-width:390px){
+  .nav.wrap{padding:0 10px!important;gap:5px!important}
+  .nav.wrap .brand{font-size:24px!important}
+  .nav.wrap .nav-right{gap:5px!important}
+  .nav.wrap .nav-cta{max-width:116px!important;padding-left:9px!important;font-size:9px!important}
+  .nav.wrap button.theme-toggle{width:38px!important;min-width:38px!important;max-width:38px!important;flex-basis:38px!important}
+  .nav.wrap .menu{width:31px!important;height:31px!important;min-width:31px!important;flex-basis:31px!important}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-symbol">☾</span><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
