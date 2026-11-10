@@ -615,6 +615,21 @@ body.dark .nav.wrap button#themeToggle{
  .nav.wrap button#themeToggle .theme-glyph{font-size:15px!important}
 }
 
+
+/* Desktop: pin Connect With Me to the far right of the header */
+@media(min-width:761px){
+ .nav.wrap{display:flex!important;align-items:center!important}
+ .nav.wrap .nav-left{flex:1 1 auto!important;min-width:0!important}
+ .nav.wrap .navlinks{display:flex!important;align-items:center!important}
+ .nav.wrap .navlinks .nav-cta{
+   margin-left:auto!important;
+   margin-right:0!important;
+   flex:0 0 auto!important;
+   order:99!important;
+ }
+ .nav.wrap .nav-right{display:flex!important;align-items:center!important;justify-content:flex-end!important;flex:0 0 auto!important;margin-left:24px!important}
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-glyph" aria-hidden="true">☀️</span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
