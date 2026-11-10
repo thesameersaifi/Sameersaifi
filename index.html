@@ -302,8 +302,47 @@ body.dark .nav.wrap .circle-scene:after{background:rgba(255,255,255,.78)}
  .nav.wrap .scene-sun{left:10px;top:10px}
 }
 
+
+/* Minimal floating pill controls based on the latest header reference */
+.nav-right{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:13px!important}
+.nav.wrap button.theme-toggle,.nav.wrap button.theme-toggle:hover,.nav.wrap button.theme-toggle:focus,.nav.wrap button.theme-toggle:active{
+  appearance:none!important;-webkit-appearance:none!important;display:flex!important;align-items:center!important;
+  width:70px!important;min-width:70px!important;height:42px!important;min-height:42px!important;max-height:42px!important;
+  flex:0 0 70px!important;padding:4px!important;margin:0!important;overflow:hidden!important;
+  border:1px solid rgba(20,20,24,.06)!important;border-radius:999px!important;background:#fff!important;
+  box-shadow:0 3px 12px rgba(20,20,24,.08)!important;transform:none!important;rotate:0deg!important;cursor:pointer!important;
+}
+.theme-track{position:relative;display:flex;align-items:center;justify-content:flex-start;width:100%;height:100%;border-radius:999px;background:#f2f1ee;transition:background .3s}
+.theme-symbol{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:15px;color:#29262a;line-height:1;transition:opacity .25s}
+.theme-knob{position:absolute;left:3px;top:3px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#171518;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.18);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s}
+.knob-symbol{font-size:14px;line-height:1}
+body.dark .nav.wrap button.theme-toggle{background:#fff!important}
+body.dark .theme-track{background:#efeeeb}
+body.dark .theme-symbol{opacity:0}
+body.dark .theme-knob{transform:translateX(27px);background:#171518;color:#fff}
+.nav.wrap .nav-cta{
+  display:inline-flex!important;align-items:center!important;justify-content:space-between!important;gap:16px!important;
+  min-width:148px!important;height:48px!important;min-height:48px!important;padding:5px 6px 5px 19px!important;
+  border-radius:999px!important;background:#fff!important;color:#19171a!important;
+  border:1px solid rgba(20,20,24,.06)!important;font-size:12px!important;font-weight:600!important;
+  white-space:nowrap!important;box-shadow:0 3px 12px rgba(20,20,24,.07)!important;transition:transform .2s,box-shadow .2s!important;
+}
+.nav.wrap .nav-cta:hover{transform:translateY(-2px)!important;box-shadow:0 7px 17px rgba(20,20,24,.12)!important}
+.cta-icon{width:36px!important;height:36px!important;flex:0 0 36px!important;display:grid!important;place-items:center!important;
+  border-radius:50%!important;background:#171518!important;color:#fff!important;font-size:17px!important;line-height:1!important}
+body.dark .nav.wrap .nav-cta{background:#fff!important;color:#19171a!important;border-color:rgba(20,20,24,.06)!important}
+body.dark .cta-icon{background:#171518!important;color:#fff!important}
+@media(max-width:760px){
+ .nav-right{gap:8px!important}
+ .nav.wrap button.theme-toggle{width:62px!important;min-width:62px!important;flex-basis:62px!important;height:38px!important;min-height:38px!important;max-height:38px!important}
+ .theme-knob{width:28px;height:28px}
+ body.dark .theme-knob{transform:translateX(23px)}
+ .nav.wrap .nav-cta{min-width:126px!important;height:43px!important;min-height:43px!important;padding:4px 5px 4px 15px!important;gap:10px!important;font-size:11px!important}
+ .cta-icon{width:33px!important;height:33px!important;flex-basis:33px!important}
+}
+
 </style></head><body>
-<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="circle-scene" aria-hidden="true"><i class="scene-moon"></i><i class="scene-sun"></i><i class="scene-hill hill-back"></i><i class="scene-hill hill-front"></i></span></button><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-avatar" aria-hidden="true">SS</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
+<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-track" aria-hidden="true"><span class="theme-symbol">☾</span><span class="theme-knob"><span class="knob-symbol">☀</span></span></span></button><a class="nav-cta" href="#contact"><span>Contact us</span><span class="cta-icon" aria-hidden="true">↗</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
 <script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('sameer-theme');if(savedTheme==='dark')document.body.classList.add('dark');function syncTheme(){const dark=document.body.classList.contains('dark');themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('aria-pressed',String(dark));document.querySelector('meta[name="theme-color"]').content=dark?'#171518':'#f8f5f4'}syncTheme();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('sameer-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()});const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
 </body></html>
