@@ -105,6 +105,23 @@ body.dark .nav-avatar{border-color:#29252c}
 body.dark .contact{background:linear-gradient(120deg,#292127,#34252a);border-color:#493a42}
 body.dark .footer{border-color:#393238;color:#a99da4}
 @media(max-width:760px){body.dark .navlinks{background:#211e24;border-color:#393238}}
+
+/* DU Mantra-inspired ambient canvas: warm paper, fine grid and soft pastel light */
+:root{--canvas:#fbfaf7;--canvas-ink:#20212b;--canvas-line:rgba(55,55,70,.055)}
+html{background:var(--canvas)}
+body{background-color:var(--canvas)!important;background-image:radial-gradient(ellipse 62% 58% at 8% 3%,rgba(213,202,255,.34),transparent 66%),radial-gradient(ellipse 54% 55% at 94% 7%,rgba(255,225,166,.38),transparent 65%),radial-gradient(ellipse 58% 58% at 62% 96%,rgba(190,231,215,.28),transparent 68%),linear-gradient(var(--canvas-line) 1px,transparent 1px),linear-gradient(90deg,var(--canvas-line) 1px,transparent 1px)!important;background-size:auto,auto,auto,34px 34px,34px 34px!important;background-attachment:fixed!important}
+.nav.wrap{background:rgba(251,250,247,.78)!important;backdrop-filter:blur(18px);border-bottom:1px solid rgba(65,61,75,.06)}
+.hero{background:linear-gradient(110deg,rgba(255,255,255,.84),rgba(255,255,255,.58))!important;border:1px solid rgba(255,255,255,.85)!important;box-shadow:0 18px 60px rgba(50,42,70,.055)}
+.hero:after{content:"";position:absolute;inset:0 0 0 auto;width:54%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 75% 80% at 72% 18%,rgba(255,231,178,.7),transparent 65%),radial-gradient(ellipse 70% 75% at 28% 82%,rgba(213,199,255,.68),transparent 67%),radial-gradient(ellipse 70% 75% at 82% 85%,rgba(183,229,211,.5),transparent 70%);mask-image:linear-gradient(90deg,transparent,black 28%)}
+.section{background:rgba(251,250,247,.62)!important;backdrop-filter:blur(3px)}
+.section:nth-of-type(even){background:rgba(245,244,248,.72)!important}
+.about-card,.work-card,.experience,.skill,.edu{background:rgba(255,255,255,.76)!important;border-color:rgba(77,70,90,.09)!important;box-shadow:0 12px 34px rgba(55,45,70,.035)}
+.contact{background:radial-gradient(ellipse at 88% 0%,rgba(255,224,174,.68),transparent 55%),radial-gradient(ellipse at 10% 100%,rgba(210,199,255,.62),transparent 60%),rgba(255,255,255,.66)!important;border:1px solid rgba(255,255,255,.9)}
+body.dark{background-color:#15151d!important;background-image:radial-gradient(ellipse 60% 50% at 8% 5%,rgba(83,65,130,.25),transparent 65%),radial-gradient(ellipse 60% 55% at 92% 8%,rgba(124,85,49,.19),transparent 65%),radial-gradient(ellipse 55% 55% at 60% 100%,rgba(44,104,88,.16),transparent 70%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px)!important;background-size:auto,auto,auto,34px 34px,34px 34px!important}
+body.dark .nav.wrap{background:rgba(25,24,33,.82)!important}
+body.dark .hero{background:linear-gradient(110deg,rgba(31,29,39,.92),rgba(31,29,39,.65))!important;border-color:rgba(255,255,255,.1)!important}
+body.dark .section,body.dark .section:nth-of-type(even){background:rgba(25,24,33,.64)!important}
+body.dark .about-card,body.dark .work-card,body.dark .experience,body.dark .skill,body.dark .edu{background:rgba(37,35,46,.82)!important}
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><a class="nav-cta" href="#contact">Connect · Contact ↗</a><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Toggle light and dark mode"><span class="theme-icon">☾</span></button><div class="nav-avatar" aria-label="Sameer Saifi profile">SS</div></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 <main>
