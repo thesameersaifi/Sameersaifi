@@ -166,6 +166,16 @@ body.dark .switch-knob{transform:translateX(49px)}
 .nav.wrap .theme-toggle:focus-visible{outline:2px solid #d9b95c;outline-offset:4px}
 @media(max-width:760px){.nav.wrap .theme-toggle{width:82px;height:39px;min-width:82px}.switch-knob{width:31px;height:31px}.switch-sun{left:10px;top:8px}.switch-moon{right:16px;top:7px}body.dark .switch-knob{transform:translateX(43px)}}
 
+
+/* Dark mode header should switch to a clean white surface */
+body.dark .nav.wrap{background:#fff!important;border-bottom:1px solid #e8e3e3!important;color:#171518!important}
+body.dark .nav.wrap .brand,body.dark .nav.wrap .navlinks a{color:#171518!important}
+body.dark .nav.wrap .brand span{color:#d99189!important}
+body.dark .nav.wrap .nav-cta{background:#171518!important;color:#fff!important;border-color:#171518!important}
+body.dark .nav.wrap .nav-avatar{border-color:#eee!important}
+body.dark .nav.wrap .menu{color:#171518!important;border-color:#dedede!important}
+@media(max-width:760px){body.dark .navlinks.open{background:#fff!important;border-color:#e8e3e3!important}body.dark .nav.wrap .navlinks a{color:#171518!important}}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a></nav></div><div class="nav-right"><a class="nav-cta" href="#contact">Connect · Contact ↗</a><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle light and dark mode"><span class="switch-sky" aria-hidden="true"><i class="switch-sun"></i><i class="switch-moon"></i><i class="switch-stars"></i><i class="switch-mountains"></i></span><span class="switch-knob"></span></button><div class="nav-avatar" aria-label="Sameer Saifi profile">SS</div></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
