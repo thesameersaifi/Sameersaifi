@@ -889,8 +889,34 @@ body.dark::after{
  body.dark::before,body.dark::after{animation:none!important;opacity:0!important}
 }
 
+
+/* Desktop header: compact CTA anchored at the far right */
+@media(min-width:761px){
+  .nav.wrap .nav-left{flex:1 1 auto!important;min-width:0!important}
+  .nav.wrap .navlinks{flex:0 1 auto!important;width:auto!important;min-width:0!important;gap:clamp(18px,2vw,30px)!important}
+  .nav.wrap .navlinks .nav-cta{display:none!important}
+  .nav.wrap .nav-right{display:flex!important;align-items:center!important;gap:clamp(14px,2vw,26px)!important;margin-left:auto!important;flex:0 0 auto!important}
+  .nav.wrap .desktop-nav-cta{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    width:auto!important;min-width:0!important;max-width:max-content!important;
+    height:44px!important;min-height:44px!important;padding:0 18px!important;gap:16px!important;
+    flex:0 0 auto!important;margin:0!important;border-radius:999px!important;
+    background:#171518!important;color:#fff!important;border:1px solid rgba(255,255,255,.08)!important;
+    font-size:12px!important;font-weight:600!important;white-space:nowrap!important;
+    box-shadow:0 5px 16px rgba(20,18,24,.12)!important;
+  }
+  .nav.wrap .desktop-nav-cta .cta-icon{
+    display:grid!important;place-items:center!important;width:30px!important;height:30px!important;
+    flex:0 0 30px!important;border-radius:9px!important;background:#fff!important;color:#171518!important;font-size:16px!important;
+  }
+  body.dark .nav.wrap .desktop-nav-cta{background:#f5f3f5!important;color:#171518!important}
+  body.dark .nav.wrap .desktop-nav-cta .cta-icon{background:#171518!important;color:#fff!important}
+}
+.desktop-nav-cta{display:none}
+@media(max-width:760px){.nav.wrap .desktop-nav-cta{display:none!important}}
+
 </style></head><body>
-<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-glyph" aria-hidden="true">☀️</span></button></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
+<header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-glyph" aria-hidden="true">☀️</span></button><a class="desktop-nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
 <script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const themeToggle=document.getElementById('themeToggle');const savedTheme=localStorage.getItem('sameer-theme');if(savedTheme==='dark')document.body.classList.add('dark');function syncTheme(){const dark=document.body.classList.contains('dark');themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('aria-pressed',String(dark));const themeGlyph=themeToggle.querySelector('.theme-glyph');if(themeGlyph)themeGlyph.textContent=dark?'🌙':'☀️';document.querySelector('meta[name="theme-color"]').content=dark?'#171518':'#f8f5f4'}syncTheme();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('sameer-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()});const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
 <script>
