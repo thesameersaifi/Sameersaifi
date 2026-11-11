@@ -915,6 +915,29 @@ body.dark::after{
 .desktop-nav-cta{display:none}
 @media(max-width:760px){.nav.wrap .desktop-nav-cta{display:none!important}}
 
+
+/* Theme-aware desktop Connect button: black on light, white on dark */
+@media(min-width:761px){
+  .nav.wrap .desktop-nav-cta,
+  .nav.wrap .desktop-nav-cta:visited{
+    background:#171518!important;color:#fff!important;
+    border-color:#171518!important;
+    box-shadow:0 5px 16px rgba(20,18,24,.12)!important;
+  }
+  .nav.wrap .desktop-nav-cta .cta-icon{
+    background:#fff!important;color:#171518!important;
+  }
+  body.dark .nav.wrap .desktop-nav-cta,
+  body.dark .nav.wrap .desktop-nav-cta:visited{
+    background:#fff!important;color:#111!important;
+    border-color:#fff!important;
+    box-shadow:0 5px 18px rgba(255,255,255,.08)!important;
+  }
+  body.dark .nav.wrap .desktop-nav-cta .cta-icon{
+    background:#111!important;color:#fff!important;
+  }
+}
+
 </style></head><body>
 <header class="nav wrap"><div class="nav-left"><a href="#home" class="brand">sameer<span>.</span></a><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></nav></div><div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle day and night mode"><span class="theme-glyph" aria-hidden="true">☀️</span></button><a class="desktop-nav-cta" href="#contact"><span>Connect With Me</span><span class="cta-icon" aria-hidden="true">↗</span></a></div><button class="menu" id="menu" aria-expanded="false">Menu ☰</button></header>
 
